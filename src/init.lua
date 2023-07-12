@@ -11,7 +11,7 @@ function RunLuau.RunBytecode(bytecode: string, env: {any})
     Fiu.luau_load(bytecode, env)()
 end
 
-function RunLuau.RunSource(source: string, env: {any})
+function RunLuau.RunSource(source: string, env: {any}?)
     local success, bytecode = LuauInLuau.Compile(source)
     if not success then return end
 
