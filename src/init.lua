@@ -7,7 +7,7 @@ function RunLuau.Compile(source: string) : (boolean, string, string)
     return LuauInLuau.Compile(source)
 end
 
-function RunLuau.RunBytecode(bytecode: string, env: {any})
+function RunLuau.RunBytecode(bytecode: string, env: {any}?)
     Fiu.luau_load(bytecode, env)()
 end
 
